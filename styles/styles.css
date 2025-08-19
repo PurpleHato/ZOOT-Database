@@ -112,7 +112,6 @@ td {
 
 tr:hover {
     background: #f8f9fa;
-    transform: scale(1.001);
 }
 
 .set-id {
