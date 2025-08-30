@@ -15,7 +15,7 @@
   @include button-base;
   padding: $padding-md $margin-lg;
   font-size: 16px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   
   &.active {
     background: $header-gradient;
@@ -33,18 +33,18 @@
     background: var(--bg-secondary);
     color: #667eea;
     border: 2px solid #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     
     [data-theme="dark"] & {
       background: var(--bg-secondary);
       color: #81e6d9;
       border: 2px solid #81e6d9;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
     
     &:hover {
-      [data-theme="dark"] & {
-        background: #4a5568;
-        transform: translateY(-2px);
-      }
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--shadow);
     }
   }
 }
