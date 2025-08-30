@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/ZOOT-Database/static/css/main.7b14a30a.css",
+    "main.css": "/ZOOT-Database/static/css/main.b078946e.css",
     "main.js": "/ZOOT-Database/static/js/main.28e617d8.js",
     "index.html": "/ZOOT-Database/index.html"
   },
   "entrypoints": [
-    "static/css/main.7b14a30a.css",
+    "static/css/main.b078946e.css",
     "static/js/main.28e617d8.js"
   ]
 }
