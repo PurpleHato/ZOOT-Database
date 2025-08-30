@@ -1,0 +1,101 @@
+@import 'variables';
+
+// Mixins
+@mixin table-cell-base {
+  padding: $padding-xs $padding-sm;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+@mixin table-cell-small {
+  font-size: 11px;
+  padding: $padding-xs;
+}
+
+@mixin table-cell-code {
+  font-family: $font-mono;
+  word-break: break-all;
+}
+
+@mixin color-theme($color-name) {
+  $color-data: map-get($colors, $color-name);
+  color: nth($color-data, 1);
+  
+  // Light mode - use semi-transparent backgrounds to allow striping to show through
+  @if $color-name == green {
+    background: rgba(209, 242, 235, 0.8);
+  } @else if $color-name == purple {
+    background: rgba(248, 245, 255, 0.8);
+  } @else if $color-name == teal {
+    background: rgba(207, 244, 252, 0.8);
+  } @else if $color-name == orange {
+    background: rgba(255, 243, 224, 0.8);
+  } @else if $color-name == blue {
+    background: rgba(227, 242, 253, 0.8);
+  } @else if $color-name == red {
+    background: rgba(255, 235, 238, 0.8);
+  } @else if $color-name == indigo {
+    background: rgba(243, 232, 255, 0.8);
+  } @else if $color-name == brown {
+    background: rgba(247, 243, 233, 0.8);
+  } @else if $color-name == pink {
+    background: rgba(255, 255, 255, 0.8);
+  } @else {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  // Dark mode adjustments for better contrast
+  [data-theme="dark"] & {
+    @if $color-name == green {
+      color: #68d391;
+      background: rgba(104, 211, 145, 0.2);
+    } @else if $color-name == purple {
+      color: #b794f6;
+      background: rgba(183, 148, 246, 0.2);
+    } @else if $color-name == teal {
+      color: #81e6d9;
+      background: rgba(129, 230, 217, 0.2);
+    } @else if $color-name == orange {
+      color: #fbb041;
+      background: rgba(251, 176, 65, 0.2);
+    } @else if $color-name == blue {
+      color: #90cdf4;
+      background: rgba(144, 205, 244, 0.2);
+    } @else if $color-name == red {
+      color: #fc8181;
+      background: rgba(252, 129, 129, 0.2);
+    } @else if $color-name == indigo {
+      color: #a78bfa;
+      background: rgba(167, 139, 250, 0.2);
+    } @else if $color-name == brown {
+      color: #d69e2e;
+      background: rgba(214, 158, 46, 0.2);
+    } @else if $color-name == pink {
+      color: #f687b3;
+      background: rgba(246, 135, 179, 0.2);
+    } @else {
+      color: var(--text-secondary);
+      background: rgba(160, 174, 192, 0.2);
+    }
+  }
+}
+
+@mixin hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin button-base {
+  border: none;
+  border-radius: $radius-round;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

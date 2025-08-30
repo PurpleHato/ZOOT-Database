@@ -1,0 +1,90 @@
+@import 'variables';
+@import 'mixins';
+
+// Base placeholder selectors
+%table-cell-base {
+  @include table-cell-base;
+}
+
+%table-cell-small {
+  @include table-cell-small;
+}
+
+%table-cell-code {
+  @include table-cell-code;
+}
+
+// Combined placeholders for common patterns
+%cell-tech-standard {
+  @extend %table-cell-base, %table-cell-code;
+}
+
+%cell-tech-small {
+  @extend %table-cell-base, %table-cell-code, %table-cell-small;
+}
+
+%cell-standard {
+  @extend %table-cell-base;
+}
+
+%cell-small {
+  @extend %table-cell-base, %table-cell-small;
+}
+
+// Color-themed placeholders
+%cell-green-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(green);
+}
+
+%cell-purple-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(purple);
+}
+
+%cell-teal-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(teal);
+}
+
+%cell-orange-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(orange);
+}
+
+%cell-blue-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(blue);
+}
+
+%cell-red-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(red);
+}
+
+%cell-indigo-tech {
+  @extend %cell-tech-standard;
+  @include color-theme(indigo);
+}
+
+%cell-brown-tech-small {
+  @extend %cell-tech-small;
+  @include color-theme(brown);
+}
+
+%cell-green-small {
+  @extend %cell-small;
+  @include color-theme(green);
+}
+
+%cell-red-small {
+  @extend %cell-small;
+  @include color-theme(red);
+}
+
+%cell-pink-small {
+  @extend %cell-small;
+  @include color-theme(pink);
+  text-align: center;
+  font-weight: 700;
+}
