@@ -13,6 +13,7 @@ import FilterControls from './components/FilterControls';
 import TableStats from './components/TableStats';
 import DataTable from './components/DataTable';
 import MainPageContent from './components/MainPageContent';
+import SegmentCallsTutorial from './components/SegmentCallsTutorial';
 import './App.scss';
 
 // Project configurations - organized in preferred order
@@ -68,6 +69,10 @@ const projectConfigs: Record<ProjectKey, ProjectConfig> = {
     hasPercussion: false,
     hasSubcategories: true,
     subcategories: {
+      tutorial: {
+        name: 'Tutorial',
+        dataFile: null
+      },
       objects: {
         name: 'Objects',
         dataFile: "data/SegmentCalls/SegmentCallsObjects.json"
@@ -298,6 +303,8 @@ const AppContent: React.FC = () => {
           onSubcategoryChange={setCurrentSubcategory}
         />
       )}
+      
+      {currentProject === 'dlist' && currentSubcategory === 'tutorial' && <SegmentCallsTutorial />}
       
       {isLoading && (
         <div className="loading">

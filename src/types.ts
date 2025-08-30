@@ -21,7 +21,7 @@ export interface ProjectConfig {
 
 export interface SubcategoryConfig {
   name: string;
-  dataFile: string;
+  dataFile: string | null;
 }
 
 export interface Column {

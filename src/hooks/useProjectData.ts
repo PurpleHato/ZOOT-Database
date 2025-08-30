@@ -24,14 +24,18 @@ export const useProjectData = (projectKey: ProjectKey, subcategory?: string) => 
             others: "data/Dlists/Others.json"
           },
           dlist: {
+            tutorial: null,
             objects: "data/SegmentCalls/SegmentCallsObjects.json",
             scenes: "data/SegmentCalls/SegmentCallsScenes.json"
           }
         };
 
         const subcategoryConfig = projectConfigs[projectKey as keyof typeof projectConfigs];
-        if (subcategoryConfig && subcategoryConfig[subcategory as keyof typeof subcategoryConfig]) {
+        if (subcategoryConfig && subcategory in subcategoryConfig) {
           const filePath = subcategoryConfig[subcategory as keyof typeof subcategoryConfig];
+          if (filePath === null) {
+            return []; // Return empty array for tutorial subcategory
+          }
           return loadDataFromFile(filePath);
         }
       }
