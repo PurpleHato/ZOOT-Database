@@ -2,7 +2,7 @@
   "name": "zelda-database",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://purplehato.github.io/ZOOT-Database",
   "dependencies": {
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-query-devtools": "^5.85.5",
